@@ -16,7 +16,7 @@ var columns = 4;
 
 var selectedImg;
 var currentImg
-var time;
+var time = 0;
 
 window.onload = function() {
     startGame();
@@ -26,33 +26,40 @@ window.onload = function() {
 }
 
 function randomImg() {
-    let random = Math.floor(Math.random() * ImgSet.length)
+    let random = document.createElement("img");
+    let randomnumber = Math.floor(Math.random() * ImgSet.length);
+    random = randomnumber;
+    document.getElementById("silueta").append(random);
+
+    random.src = ImgList.shift() + ".png";
 }
 
 function startGame() {
     for (let r = 0; r < rows; r++){
-        for (let c = 0; r < columns; c++) {
-            let image = document.createElement("image");
-            image.src = ImgList + ".jpg";
-            document.getElementById("board");
-
-            image.addEventListener("click", selectedImg);
+        for (let c = 0; c < columns; c++) {
+            //<img>
+            let tile = document.createElement("img");
+            tile.id = r.toString() + "-" + c.toString();
+            tile.src = ImgList.shift() + ".png";
+            document.getElementById("board").append(tile);
+            //tile.addEventListener("click", compare);
+            
         }
     }
 
 }
 
-function compare() {
-    if (selectedImg == currentImg){
-        time += 1;
-    }
-    else{
+//function compare() {
+//    if (selectedImg == currentImg){
+//        time += 1;
+//    }
+//    else{
 
-    }
-}
+//    }
+//}
 
 //function timer() {
-//    document.querySelector("span");
+//    time = document.querySelector("span");
 //}
 
 //function reiniciarJuego() {
