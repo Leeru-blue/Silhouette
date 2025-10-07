@@ -3,6 +3,7 @@ var images = ["botella", "concha", "concha2", "delfin", "estrella", "medusa", "p
 var rows = 2;
 var columns = 4;
 
+var addImg = 0;
 var selectedImg;
 var currentImg;
 
@@ -13,28 +14,25 @@ window.onload = function() {
     randomImg();
     startGame();
     //timer();
-
+    //reload();
 }
-
-const randomImage = Math.floor(Math.random()* images.length);
 
 //Aparece una silueta al azar
-function randomImg() {   
-    const image = document.getElementById("image");
+function randomImg() {
+    var image = document.getElementById("image");
+    var randomImage = Math.floor(Math.random()* images.length);
     image.src = images[randomImage] + ".png";
+    console.log("Hiciste click a una de las imágenes");
 }
 
-//Aparecen todas las imágenes disponibles
+//Aparecen todas las imágenes en el tablero
 function startGame() {
     for (let r = 0; r < rows; r++){
-
-        let row = [];
-
         for (let c = 0; c < columns; c++) {
 
-            let pieceImg = images.pop();
-            row.push(pieceImg);
-            
+            let pieceImg = images[addImg];
+            addImg ++;
+
             //<img>
             let tile = document.createElement("img");
             tile.src = pieceImg + ".png";
@@ -43,27 +41,31 @@ function startGame() {
             
         }
     }
-
 }
 
+// Se compara si la silueta y la imagen seleccionada son iguales
 function compare() {
 
-    currentImg;
-    selectedImg;
-
-    if (selectedImg.src == currentImg.src){
+/*  if (selectedImg.src == currentImg.src){
         score += 10;
-        let audioCorrecto = new Audio("");
+        document.getElementById("score").innerHTML = score;
+        var audioCorrecto = new Audio("./beep-6-96243.mp3");
+        audioCorrecto.play();
     }
     else { 
-        let audioIncorrecto = new Audio("");
+        var audioIncorrecto = new Audio("./error-002-337159.mp3");
+        audioIncorrecto.play();
     }
+
+    setTimeout(wait, 1000); */
+
+    randomImg();
 }
 
 function timer() {
     time = document.querySelector("span");
 }
 
-function reiniciar() {
+function reload() {
     document.getElementById("reiniciar");
 }

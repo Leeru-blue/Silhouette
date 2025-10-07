@@ -8,15 +8,15 @@
 </head>
 <body>
     <h1>Silhouette</h1>
-    <p>Tiempo: <span>0:30</span></p>
-    
+    <p id="time">Tiempo: <span>0:30</span></p>
+    <p id="score">Puntos: <span class="scores">0</span></p>
     <div id="container-image">
-        <img src="" id="image">
+        <img id="image">
     </div>
 
     <div id="board"></div>
 
-    <button onclick()="reiniciar" id="reiniciar">Restart</button>
+    <button onclick="reload()" id="reiniciar">Restart</button>
     <script src="silhouette.js"></script>
 </body>
 </html>
