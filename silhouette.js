@@ -20,7 +20,7 @@ window.onload = function() {
 function randomImg() {
     var image = document.getElementById("image");
     var randomImage = Math.floor(Math.random()* images.length);
-    image.src = images[randomImage] + ".png";
+    image.src = "./images/" + images[randomImage] + ".png";
 }
 
 //Agrega todas las imágenes en el tablero
@@ -35,7 +35,7 @@ function startGame() {
             //<img id= 0-0>
             let tile = document.createElement("img");
             tile.id = r.toString() + "-" + c.toString(); //Esto es para saber qué imagen fue clickeada
-            tile.src = pieceImg + ".png";
+            tile.src = "./images/" + pieceImg + ".png";
             document.getElementById("board").append(tile);
             tile.addEventListener("click", compare);
             
