@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +8,15 @@
 </head>
 <body>
     <h1>Silhouette</h1>
-    <p id="time">Tiempo: <span>0:30</span></p>
-    <p id="score">Puntos: <span class="scores">0</span></p>
+    <p>Tiempo: 0:<span id="countdown"></span></p>
+    <p id="score">Puntos: <span class="score">0</span></p>
     <div id="container-image">
         <img id="image">
     </div>
 
     <div id="board"></div>
 
-    <button onclick="reload()" id="reiniciar">Restart</button>
+    <button onclick="reload()" id="reload">Restart</button>
     <script src="silhouette.js"></script>
 </body>
 </html>
